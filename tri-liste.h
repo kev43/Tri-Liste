@@ -10,7 +10,7 @@
 
 liste* fusion(liste *L1, liste* L2);
 
-liste* trier(liste* l);
+liste* triEclatementFusion(liste* l);
 
 void eclatement(liste* l , liste* l1 ,liste* l2);
 

@@ -5,10 +5,25 @@
 #include "tri-liste.h"
 #include <stdlib.h>
 
+
+liste* triEclatementFusion(liste* l) {
+
+	liste* l1 = NULL, l2 = NULL;
+
+	eclatement(l, l1, l2);
+
+	while (l2 != NULL) {
+		l = fusion(l1, l2);
+		eclatement(l, l1, l2);
+	}
+	
+	return l;
+}
+
 void eclatement(liste* l , liste* l1 ,liste* l2) {
 
     int numero_liste=1 ;
-    Liste * courant  , courant1 , courant2;
+    liste * courant  , courant1 , courant2;
     courant = l;
     precedent = NULL;
     courant1 = l1;
@@ -36,20 +51,22 @@ void eclatement(liste* l , liste* l1 ,liste* l2) {
     }
 }
 
-liste* fusion(liste *L1, liste* L2) {
+liste* fusion(liste *l1, liste* l2) {
 
 	// la nouvelle liste, cible de la fusion
-	liste* L = NULL;
+	liste* l = NULL;
 
-	while (L1 != NULL && L2 != NULL) {
-		if (L2 == NULL || ((L1 != NULL && L2) && strcmp(L1.valeur, L2.valeur) < 0 )) {
-			ajoute_fin(L, L1.valeur);
-			L1 = L1.suivant;
+	while (l1 != NULL && l2 != NULL) {
+		if (l2 == NULL || ((l1 != NULL && l2) && strcmp(l1.valeur, l2.valeur) < 0 )) {
+			ajoute_fin(l, l1.valeur);
+			supprimer(l1, l2.valeur);
+			l1 = l1.suivant;
 		} else {
-			ajoute_fin(L, L2.valeur);
-			L2 = L2.suivant;
+			ajoute_fin(l, l2.valeur);
+			supprimer(l2, l2.valeur);
+			l2 = l2.suivant;
 		}
 	}
-	
-	return L;
+
+	return l;
 }
