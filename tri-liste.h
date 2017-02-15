@@ -6,6 +6,9 @@
 #define TRI_LISTE_TRI_LISTE_H
 
 #include "liste.h"
+#include <string.h>
+
+liste* fusion(liste *L1, liste* L2);
 
 liste* trier(liste* l);
 

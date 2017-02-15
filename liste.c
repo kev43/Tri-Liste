@@ -22,6 +22,9 @@ void afficher(liste *l) {
 }
 
 liste* ajoute_fin(liste *l, int entier) {
+	if (l == NULL) {
+		return nouvelleListe(entier);
+	}
 
 	// on crée un nouveau maillon
 	liste* new = malloc(sizeof(liste));

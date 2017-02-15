@@ -50,5 +50,6 @@ liste* fusion(liste *L1, liste* L2) {
 			L2 = L2.suivant;
 		}
 	}
-
+	
+	return L;
 }
