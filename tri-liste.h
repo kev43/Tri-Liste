@@ -12,7 +12,7 @@ liste* fusion(liste *L1, liste* L2);
 
 liste* triEclatementFusion(liste* l);
 
-void eclatement(liste* l , liste* l1 ,liste* l2);
+void eclatement(liste* l, liste* l1, liste* l2);
 
 
 #endif //TRI_LISTE_TRI_LISTE_H

@@ -16,12 +16,18 @@
 int main(void)
 {
 
-    liste *maListe = nouvelleListe(8);
-    int tab[]={5,6,8,2,3,4,8,5,4,6};
+    liste *maListe = nouvelleListe(3);
+    int tab[]={5,6,2,8,9,11,7,4,10,12,15,20,1,19,13,17};
 
-    maListe = remplir(maListe ,tab ,10);
+    maListe = remplir(maListe, tab, 16);
 
-    //maListe = trier(maListe) ;
+    printf("avant tri:\n");
+    afficher(maListe);
+
+    maListe = triEclatementFusion(maListe);
+    
+    printf("après tri:\n");
+    afficher(maListe);
 
 	vider(maListe);
 
